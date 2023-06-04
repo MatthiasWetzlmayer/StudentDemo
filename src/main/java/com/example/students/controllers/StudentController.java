@@ -1,10 +1,10 @@
-package com.example.students;
+package com.example.students.controllers;
 
+import com.example.students.services.StudentDataService;
 import com.example.students.exceptions.StudentNotFoundException;
 import com.example.students.models.StudentDto;
 import com.example.students.models.StudentResource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

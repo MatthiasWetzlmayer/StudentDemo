@@ -1,4 +1,4 @@
-package com.example.students;
+package com.example.students.repositories;
 
 import com.example.students.models.StudentEntity;
 import org.springframework.data.domain.Example;

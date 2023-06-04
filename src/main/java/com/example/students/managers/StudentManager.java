@@ -1,11 +1,10 @@
-package com.example.students;
+package com.example.students.managers;
 
 
 import com.example.students.exceptions.StudentNotFoundException;
 import com.example.students.models.Student;
 import com.example.students.models.StudentEntity;
-import com.example.students.models.StudentResource;
-import jakarta.annotation.Resource;
+import com.example.students.repositories.IStudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

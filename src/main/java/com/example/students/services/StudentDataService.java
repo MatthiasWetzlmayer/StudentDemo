@@ -1,19 +1,15 @@
-package com.example.students;
+package com.example.students.services;
 
 import com.example.students.exceptions.InvalidDateException;
 import com.example.students.exceptions.StudentNotFoundException;
+import com.example.students.managers.StudentManager;
 import com.example.students.models.Student;
 import com.example.students.models.StudentDto;
 import com.example.students.models.StudentResource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Duration;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
