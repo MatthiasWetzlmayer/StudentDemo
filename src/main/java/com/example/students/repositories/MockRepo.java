@@ -12,15 +12,6 @@ import java.util.Optional;
 import java.util.function.Function;
 
 public class MockRepo implements IStudentRepository{
-    @Override
-    public <S extends StudentEntity> S insert(S entity) {
-        return null;
-    }
-
-    @Override
-    public <S extends StudentEntity> List<S> insert(Iterable<S> entities) {
-        return null;
-    }
 
     @Override
     public <S extends StudentEntity> Optional<S> findOne(Example<S> example) {

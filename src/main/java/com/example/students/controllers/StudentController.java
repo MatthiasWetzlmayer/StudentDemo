@@ -35,7 +35,7 @@ public class StudentController {
     }
 
     @RequestMapping(value = "{id}",method = RequestMethod.DELETE)
-    public StudentResource deleteStudent(String id) throws StudentNotFoundException {
+    public StudentResource deleteStudent(@PathVariable String id) throws StudentNotFoundException {
         return dataService.deleteStudent(id);
     }
 
