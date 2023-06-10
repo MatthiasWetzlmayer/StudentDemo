@@ -8,7 +8,5 @@ import org.springframework.data.repository.query.QueryByExampleExecutor;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IStudentRepository extends ListCrudRepository<StudentEntity, String>,
-                                            ListPagingAndSortingRepository<StudentEntity, String>,
-                                            QueryByExampleExecutor<StudentEntity> {
+public interface IStudentRepository {
 }

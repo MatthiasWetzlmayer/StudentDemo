@@ -13,51 +13,31 @@ import java.util.Optional;
 
 @Component
 public class StudentManager {
-    @Autowired
-    private IStudentRepository repository;
 
 
     public Student createStudent(Student student){
-        return convertEntityToStudent(
-                repository.save(
-                        convertStudentToEntity(student,true,false)
-                ));
+        return null;
     }
 
     public List<Student> getAllStudents() {
-        return repository.findAll().stream().map(this::convertEntityToStudent).toList();
+        return null;
     }
 
     public Student getStudentById(String id) throws StudentNotFoundException {
-        Optional<StudentEntity> entity = repository.findById(id);
-        if(entity.isEmpty()){
-            throw new StudentNotFoundException("Der Schüler mit der Id"+ id+ "existiert nicht");
-        }
-
-        return convertEntityToStudent(entity.get());
+       return null;
     }
 
-    public Student updateStudent(Student student) throws StudentNotFoundException {
-        if(!repository.existsById(student.getId())){
-            throw new StudentNotFoundException("Der Schüler mit der Id"+ student.getId()+ "existiert nicht");
-        }
-        return convertEntityToStudent(
-                repository.save(
-                        convertStudentToEntity(student,false,true)
-                ));
-    }
+    /*Wandelt ein Student Objekt in ein Datenbankobjekt um
 
-    public Student deleteStudent(String id) throws StudentNotFoundException {
-        Optional<StudentEntity> opt = repository.findById(id);
-        if(opt.isEmpty()){
-            throw new StudentNotFoundException("Der Schüler mit der Id"+ id + "existiert nicht");
-        }
+    */
 
-        StudentEntity entity = opt.get();
-        repository.delete(entity);
-        return convertEntityToStudent(entity);
-    }
-
+    /**
+     * Wandelt ein Student Objekt in ein Datenbankobjekt um
+     * @param student Das Studentobjekt, welches umgewandelt wird
+     * @param create Wenn create true ist, wird der Wert createdAt im Entity auf die aktuelle Zeit gesetzt
+     * @param update Wenn update true ist, wird der Wert updatedAt im Entity auf die aktuelle Zeit gesetzt
+     * @return Das umgewandelte Entity
+     */
     private StudentEntity convertStudentToEntity(Student student, boolean create, boolean update){
         StudentEntity entity = new StudentEntity();
         entity.setId(student.getId());
@@ -74,6 +54,8 @@ public class StudentManager {
         }
         return entity;
     }
+
+    //Wandelt ein Datenbankobjekt in ein Student Objekt um
 
     private Student convertEntityToStudent(StudentEntity entity){
         Student student = new Student();
