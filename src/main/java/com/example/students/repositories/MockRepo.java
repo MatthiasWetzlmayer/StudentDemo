@@ -7,6 +7,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
@@ -62,6 +65,12 @@ public class MockRepo implements IStudentRepository{
     public Optional<StudentEntity> findById(String s) {
         StudentEntity entity = new StudentEntity();
         entity.setId("test");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+        try {
+            entity.setBirthDay(sdf.parse("01.01.2000"));
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
         return Optional.of(entity);
     }
 

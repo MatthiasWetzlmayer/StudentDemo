@@ -19,8 +19,6 @@ public class StudentDataService {
     private StudentManager manager;
     private SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
 
-
-
     public List<StudentResource> getAllStudents() {
         return manager.getAllStudents().stream().map(this::convertStudentToStudentResource).toList();
     }
