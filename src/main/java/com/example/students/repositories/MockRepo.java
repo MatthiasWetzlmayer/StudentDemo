@@ -60,7 +60,9 @@ public class MockRepo implements IStudentRepository{
 
     @Override
     public Optional<StudentEntity> findById(String s) {
-        return Optional.empty();
+        StudentEntity entity = new StudentEntity();
+        entity.setId("test");
+        return Optional.of(entity);
     }
 
     @Override
