@@ -65,7 +65,6 @@ public class StudentManager {
         entity.setLastName(student.getLastName());
         entity.setBirthDay(student.getBirthDay());
         entity.setAvgGrade(student.getAvgGrade());
-        entity.setSchoolYear(entity.getSchoolYear());
         if(create){
             entity.setCreatedAt(System.currentTimeMillis());
         }
@@ -81,7 +80,6 @@ public class StudentManager {
         student.setFirstName(entity.getFirstName());
         student.setLastName(entity.getLastName());
         student.setAvgGrade(entity.getAvgGrade());
-        student.setSchoolYear(entity.getSchoolYear());
         student.setBirthDay(entity.getBirthDay());
         return student;
     }

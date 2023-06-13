@@ -46,7 +46,6 @@ public class StudentDataService {
         student.setFirstName(dto.getFirstName());
         student.setLastName(dto.getLastName());
         student.setAvgGrade(dto.getAvgGrade());
-        student.setSchoolYear(dto.getSchoolYear());
 
         try{
             Date date = sdf.parse(dto.getBirthDay());
@@ -68,7 +67,6 @@ public class StudentDataService {
         resource.setFirstName(student.getFirstName());
         resource.setLastName(student.getLastName());
         resource.setAvgGrade(student.getAvgGrade());
-        resource.setSchoolYear(student.getSchoolYear());
 
         long difference = new Date().getTime() - student.getBirthDay().getTime();
         int age = (int) (difference / (1000L * 60 * 60 * 24 * 365.25));
