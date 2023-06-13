@@ -9,6 +9,7 @@ import com.example.students.models.StudentResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -42,7 +43,7 @@ public class StudentDataService {
     }
     private Student convertStudentDtoToStudent(StudentDto dto) throws Exception {
         Student student = new Student();
-        student.setFistName(dto.getFistName());
+        student.setFirstName(dto.getFirstName());
         student.setLastName(dto.getLastName());
         student.setAvgGrade(dto.getAvgGrade());
         student.setSchoolYear(dto.getSchoolYear());
@@ -53,7 +54,7 @@ public class StudentDataService {
                 throw new InvalidDateException("Das Geburtsdatum darf nicht nach dem aktuellem Datum sein");
             }
             student.setBirthDay(date);
-        }catch (Exception ex){
+        }catch (ParseException ex){
             throw new InvalidDateException("Das Geburtsdatum entspricht nicht dem richtigen Format");
         }
 
@@ -64,7 +65,7 @@ public class StudentDataService {
     private StudentResource convertStudentToStudentResource(Student student){
         StudentResource resource = new StudentResource();
         resource.setId(student.getId());
-        resource.setFistName(student.getFistName());
+        resource.setFirstName(student.getFirstName());
         resource.setLastName(student.getLastName());
         resource.setAvgGrade(student.getAvgGrade());
         resource.setSchoolYear(student.getSchoolYear());

@@ -11,9 +11,8 @@ import java.util.Date;
 @Data
 public class Student {
     private String id;
-    private String fistName;
+    private String firstName;
     private String lastName;
     private Date birthDay;
     private double avgGrade;
-    private int schoolYear;
 }

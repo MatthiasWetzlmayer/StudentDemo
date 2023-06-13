@@ -9,9 +9,8 @@ import lombok.ToString;
 @Setter
 @ToString
 public class StudentDto {
-    private String fistName;
+    private String firstName;
     private String lastName;
     private String birthDay;
     private double avgGrade;
-    private int schoolYear;
 }
