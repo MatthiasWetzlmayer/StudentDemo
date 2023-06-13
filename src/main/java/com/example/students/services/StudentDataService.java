@@ -32,10 +32,9 @@ public class StudentDataService {
     //Wandelt ein Dto-Objekt in ein Student-Objekt um
     private Student convertStudentDtoToStudent(StudentDto dto) throws Exception {
         Student student = new Student();
-        student.setFistName(dto.getFistName());
+        student.setFirstName(dto.getFirstName());
         student.setLastName(dto.getLastName());
         student.setAvgGrade(dto.getAvgGrade());
-        student.setSchoolYear(dto.getSchoolYear());
 
         //TODO Datum überprüfen
 
@@ -47,10 +46,9 @@ public class StudentDataService {
     private StudentResource convertStudentToStudentResource(Student student){
         StudentResource resource = new StudentResource();
         resource.setId(student.getId());
-        resource.setFistName(student.getFistName());
+        resource.setFirstName(student.getFirstName());
         resource.setLastName(student.getLastName());
         resource.setAvgGrade(student.getAvgGrade());
-        resource.setSchoolYear(student.getSchoolYear());
         resource.setBirthDay(sdf.format(student.getBirthDay()));
 
         long difference = new Date().getTime() - student.getBirthDay().getTime();

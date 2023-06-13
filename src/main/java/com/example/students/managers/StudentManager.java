@@ -41,11 +41,10 @@ public class StudentManager {
     private StudentEntity convertStudentToEntity(Student student, boolean create, boolean update){
         StudentEntity entity = new StudentEntity();
         entity.setId(student.getId());
-        entity.setFistName(student.getFistName());
+        entity.setFirstName(student.getFirstName());
         entity.setLastName(student.getLastName());
         entity.setBirthDay(student.getBirthDay());
         entity.setAvgGrade(student.getAvgGrade());
-        entity.setSchoolYear(entity.getSchoolYear());
         if(create){
             entity.setCreatedAt(System.currentTimeMillis());
         }
@@ -60,10 +59,9 @@ public class StudentManager {
     private Student convertEntityToStudent(StudentEntity entity){
         Student student = new Student();
         student.setId(entity.getId());
-        student.setFistName(entity.getFistName());
+        student.setFirstName(entity.getFirstName());
         student.setLastName(entity.getLastName());
         student.setAvgGrade(entity.getAvgGrade());
-        student.setSchoolYear(entity.getSchoolYear());
         student.setBirthDay(entity.getBirthDay());
         return student;
     }

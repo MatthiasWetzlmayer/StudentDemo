@@ -9,11 +9,10 @@ import java.util.Date;
 @Document(collection = "Student")
 public class StudentEntity {
     private String id;
-    private String fistName;
+    private String firstName;
     private String lastName;
     private Date birthDay;
     private double avgGrade;
-    private int schoolYear;
     private long createdAt;
     private long updatedAt;
 }
